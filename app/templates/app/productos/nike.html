@@ -8,15 +8,15 @@
 <body>
     <div class="container">
         <div>
-            <a href="../login.html"><button class="log">Login</button></a>
-            <a href="../signup.html"><button class="reg">Sign up</button></a>
+            <a href="{%url 'login'%}"><button class="log">Login</button></a>
+            <a href="{%url 'signup'%}"><button class="reg">Sign up</button></a>
         </div>
     </div>
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="nike.html">Nike</a>
-        <a href="adidas.html">Adidas</a>
-        <a href="puma.html">Puma</a>
+        <a href="{% url 'index'%}">Home</a>
+        <a href="{% url 'nike'%}">Nike</a>
+        <a href="{% url 'adidas'%}">Adidas</a>
+        <a href="{% url 'puma'%}">Puma</a>
         <a href="#">Carrito</a>
         <div class="animation start-home"></div>
     </nav>
