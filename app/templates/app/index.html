@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="css/styleMain.css">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'app/css/styleMain.css'%}">
 </head>
 <body>
     <div class="background-one">
         <div class="link-container">
-            <a class="link-one" href="productos/nike.html"><img src="img/main/nike.png"></a>
+            <a class="link-one" href="{%url 'nike'%}"><img src="{%static 'app/img/main/nike.png'%}"></a>
         </div>
         </div>
         <div class="background-two link-container">
-        <a class="link-two" href="productos/adidas.html"><img src="img/main/adidas.png"></a>
+        <a class="link-two" href="{% url 'adidas' %}"><img src="{%static 'app/img/main/adidas.png'%}"></a>
         </div>
         <div class="background-three link-container">
-        <a class="link-three" href="productos/puma.html"><img src="img/main/puma.png"></a>
+        <a class="link-three" href="{%url 'puma'%}"><img src="{%static 'app/img/main/puma.png'%}"></a>
     </div>
 </body>
 </html>
