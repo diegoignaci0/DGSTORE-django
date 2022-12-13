@@ -1,18 +1,31 @@
 from django.shortcuts import render
 
+from .models import Nike,Adidas,Puma
 # Create your views here.
 
 def index(request):
     return render(request, 'app/index.html')
 
 def nike(request):
-    return render(request, 'app/productos/nike.html')
+    nike = Nike.objects.all()
+    data ={
+        'nike':nike
+    }
+    return render(request, 'app/productos/nike.html',data)
 
 def adidas(request):
-    return render(request, 'app/productos/adidas.html')
+    adidas = Adidas.objects.all()
+    data = {
+        'adidas':adidas
+    }
+    return render(request, 'app/productos/adidas.html',data)
 
 def puma(request):
-    return render(request, 'app/productos/puma.html')
+    puma = Puma.objects.all()
+    data={
+        'pumas':puma
+    }
+    return render(request, 'app/productos/puma.html',data)
 
 
 def login(request):

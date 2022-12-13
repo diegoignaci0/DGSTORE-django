@@ -21,82 +21,23 @@
         <div class="animation start-home"></div>
     </nav>
     <div class="productos">
+        {% load humanize %}
+    <div class="productos">
+        {%for p in adidas%}
         <div class="card">
             <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
+                {% if p.imagen%}
+                <img src="{{p.imagen.url}}" class="sapatilla">
+                {% endif %}
             </div>
             <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
+                <h3>{{p.adidas | capfirst}}</h3>
+                <h2 class="price">${{p.precio | intcomma}}</h2>
                 <a href="#" class="buy">AGREGAR A CARRITO</a>
             </div>
         </div>
-
-        <div class="card">
-            <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
-            </div>
-            <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
-                <a href="#" class="buy">AGREGAR A CARRITO</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
-            </div>
-            <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
-                <a href="#" class="buy">AGREGAR A CARRITO</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
-            </div>
-            <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
-                <a href="#" class="buy">AGREGAR A CARRITO</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
-            </div>
-            <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
-                <a href="#" class="buy">AGREGAR A CARRITO</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
-            </div>
-            <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
-                <a href="#" class="buy">AGREGAR A CARRITO</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBox">
-                <img src="{%static 'app/img/productos/A2.webp'%}" class="sapatilla">
-            </div>
-            <div class="contentBox">
-                <h3>Adidas Forum</h3>
-                <h2 class="price">$124.000</h2>
-                <a href="#" class="buy">AGREGAR A CARRITO</a>
-            </div>
-        </div>  
+        {%endfor%}
+    </div>
     </div>
 
     <footer>
