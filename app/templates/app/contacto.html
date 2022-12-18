@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <title>Tecnomarket</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+        <h2>Contactanos!</h2>
+        <form action="" method="post">
+            {%csrf_token%}
+            {{ form }}
+            <button type="submit">Enviar </button>
+        </form>
+        {{mensaje}}
+</body>
+</html>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .models import Nike,Adidas,Puma
+from .forms import ContactoForm
 # Create your views here.
 
 def index(request):
@@ -30,7 +31,15 @@ def puma(request):
 
 def login(request):
     return render(request, 'app/login.html')
+    
+def contacto(request):
+    data = {
+        'form':ContactoForm()
+    }
 
+    if request.method == 'POST':
+        formulario =ContactoForm(data=request.POST)
+    return render(request, 'app/contacto.html', data)
     
 def signup(request):
     return render(request, 'app/signup.html')
